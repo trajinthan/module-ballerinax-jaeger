@@ -275,7 +275,7 @@ release {
 task codeCoverageReport(type: JacocoReport) {
     dependsOn('jaeger-extension-ballerina:extractBallerinaClassFiles')
 
-    executionData fileTree(project.rootDir.absolutePath).include("**/*.exec")
+    executionData file("module-ballerinax-jaeger/jaeger-extension-tests/build/jacoco/test.exec")
 
     additionalClassDirs files("${buildDir}/classes")
 
